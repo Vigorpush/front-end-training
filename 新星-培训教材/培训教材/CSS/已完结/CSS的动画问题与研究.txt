@@ -1,0 +1,140 @@
+如果没读的那章浏览器兼容性的话，我推荐大家读一遍，因为会对这章章节的理解有帮助作用；如果读了，还是推荐再读一遍。
+
+CSS的动画功能，是CSS3最新的功能，通过CSS3，我们能够创建动画，甚至可以替代网站中的一些图片、还有Flash。
+
+而CSS动画的重中之重就是@keyframes的这个规则。。
+
+frames的中文意思就是	框架
+key的中文意思就是		关键
+
+由此可以得知，我们在做动画的时候，需要使用这些东西，就相当于木偶剧一样，要有主要的frame然后这个框架里面需要有开始和结束，并且还可以有更多。
+
+举个例子：
+该例子摘取自W3C中文网
+
+	@keyframes myfirst
+	{
+	from {background: red;}
+	to {background: yellow;}
+	}
+	
+	解释一下，要设置该动画的时候要使用@keyframes，然后再确定动画名称————“myfirst”。
+	
+	这是该动画的命名，然后我们看一下，其中的动画内容
+	
+	开始：背景为红色
+	结束：背景为黄色
+	
+	什么意思呢，我们的这个动画就是如果，一个元素使用了myfirst这个动画，那么这个元素的背景将会从红色，转变为黄色。
+
+	@-moz-keyframes myfirst /* Firefox */
+	{
+	from {background: red;}
+	to {background: yellow;}
+	}
+
+	@-webkit-keyframes myfirst /* Safari 和 Chrome */
+	{
+	from {background: red;}
+	to {background: yellow;}
+	}
+
+	@-o-keyframes myfirst /* Opera */
+	{
+	from {background: red;}
+	to {background: yellow;}
+	}
+	
+	
+	CSS3 动画
+
+		当您在 @keyframes 中创建动画时，请把它捆绑到某个选择器，否则不会产生动画效果。
+
+		通过规定至少以下两项 CSS3 动画属性，即可将动画绑定到选择器：
+
+			规定动画的名称
+			规定动画的时长
+
+	div
+	{
+		animation: myfirst 5s;
+		-moz-animation: myfirst 5s;	/* Firefox */
+		-webkit-animation: myfirst 5s;	/* Safari 和 Chrome */
+		-o-animation: myfirst 5s;	/* Opera */
+	}
+	
+	这些代码的意思就是，div 元素使用 myfirst的动画效果，然后设置时间为5s，然后你在浏览器的显示结果就是5s之后，div 元素的背景就是由红色渐变为黄色。
+	ps：这时候，我们可以使用其他的元素，来代替div，可以用class选择器，也可以使用Id选择器，详情请看CSS相关的教材。
+	
+	说点与浏览器相关的东西吧：
+
+	Internet Explorer 10、Firefox 以及 Opera 支持 @keyframes 规则和 animation 属性。
+
+	Chrome 和 Safari 需要前缀 -webkit-。
+
+	注释：Internet Explorer 9，以及更早的版本，不支持 @keyframe 规则或 animation 属性。
+	
+	以上是基本的CSS动画使用，如果大家发现你所编写的CSS代码无法使用的时候，很有可能是用户使用的是IE浏览器。
+	
+	我们学习一下稍微复杂些的代码。
+	同样的，代码来自于网络，代码如下：
+	
+	@keyframes myfirst
+	{
+	0%   {background: red; left:0px; top:0px;}
+	25%  {background: yellow; left:200px; top:0px;}
+	50%  {background: blue; left:200px; top:200px;}
+	75%  {background: green; left:0px; top:200px;}
+	100% {background: red; left:0px; top:0px;}
+	}
+
+	@-moz-keyframes myfirst /* Firefox */
+	{
+	0%   {background: red; left:0px; top:0px;}
+	25%  {background: yellow; left:200px; top:0px;}
+	50%  {background: blue; left:200px; top:200px;}
+	75%  {background: green; left:0px; top:200px;}
+	100% {background: red; left:0px; top:0px;}
+	}
+
+	@-webkit-keyframes myfirst /* Safari 和 Chrome */
+	{
+	0%   {background: red; left:0px; top:0px;}
+	25%  {background: yellow; left:200px; top:0px;}
+	50%  {background: blue; left:200px; top:200px;}
+	75%  {background: green; left:0px; top:200px;}
+	100% {background: red; left:0px; top:0px;}
+	}
+
+	@-o-keyframes myfirst /* Opera */
+	{
+	0%   {background: red; left:0px; top:0px;}
+	25%  {background: yellow; left:200px; top:0px;}
+	50%  {background: blue; left:200px; top:200px;}
+	75%  {background: green; left:0px; top:200px;}
+	100% {background: red; left:0px; top:0px;}
+	}
+	
+这些则是加入了百分比这个单位，而这个单位就代表：
+	
+	在一开始，背景是红色，left 0 top 0
+	当进程到25%时（会根据设置的时间来计算），背景变为黄色，left:200px;top:0px;
+	当进程到50%时（会根据设置的时间来计算），背景变为蓝色，left:200px;top:200px;
+	当进程到75%时（会根据设置的时间来计算），背景变为绿色，left:0px;top:200px;
+	当完成时时（会根据设置的时间来计算），背景变为红色，left:0px;top:0px;
+	
+	
+	PS如果开发者没有设置时间的话，就是默认的是零秒。
+	
+	
+总结，通过这一系列的学习，我们可以知道，通过keyframes控制CSS的各种的样式变化，从而达到，像是flash一般的动画的效果。而这一点，作为移动互联网和前端统一化的过程中属于举足轻重的作用。
+
+相比较flash，CSS做的动画更加的简洁、安全并且加载速度快，不用任何的插件来支持动画的展示，所以说对于缺少插件的手机端来说，使用CSS来制作动画，更加的合适。
+
+如果使用flash的话：
+第一，有可能会有很多的漏洞
+第二，加载速度的会因为flash的加载而变慢
+第三，flash作为外部的插件，并不会被搜索引擎收录。
+第四，flash可能会因为各种事情而崩溃，无法使用。
+
+网站使用CSS来制作动画，极大的提高的该网站的加载速度，提升用户的体验。

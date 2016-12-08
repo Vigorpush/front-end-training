@@ -1,0 +1,19 @@
+JavaScript 标准参考教程（alpha）
+	https://wohugb.gitbooks.io/javascript/content/introduction/why.html
+	
+	
+Web 建站技术中，HTML、HTML5、XHTML、CSS、SQL、JavaScript、PHP、ASP.NET、Web Services 是什么？
+	http://www.zhihu.com/question/22689579
+	
+JavaScript
+	http://www.zhihu.com/topic/19552521/top-answers
+
+JavaScript 参考手册
+	http://www.w3school.com.cn/jsref/
+	
+JavaScript 教程
+	http://www.runoob.com/js/js-tutorial.html
+
+JavaScript 指南
+	https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide
+	
